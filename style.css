@@ -212,7 +212,7 @@ body {
         border-radius: 10px;
 }
 
-.container .container-form .step2 .switch {
+.container .container-form .step2 .step2-switch .switch {
         position: absolute;
         display: inline-block;
         width: 4.5rem;
@@ -221,13 +221,13 @@ body {
         right: 12.5rem;
 }
       
-.container .container-form .step2 .switch input { 
+.container .container-form .step2 .step2-switch .switch input { 
         opacity: 0;
         width: 0;
         height: 0;
 }
       
-.container .container-form .step2 .slider {
+.container .container-form .step2 .step2-switch .slider {
         position: absolute;
         cursor: pointer;
         top: 0;
@@ -239,7 +239,7 @@ body {
         transition: .4s;
 }
       
-.container .container-form .step2 .slider:before {
+.container .container-form .step2 .step2-switch .slider:before {
         position: absolute;
         content: "";
         height: 26px;
@@ -251,38 +251,38 @@ body {
         transition: .4s;
 }
       
-.container .container-form .step2 input:checked + .slider {
+.container .container-form .step2 .step2-switch input:checked + .slider {
         background-color: blue;
 }
       
-.container .container-form .step2 input:focus + .slider {
+.container .container-form .step2 .step2-switch input:focus + .slider {
         box-shadow: 0 0 1px blue;
 }
       
-.container .container-form .step2 input:checked + .slider:before {
+.container .container-form .step2 .step2-switch input:checked + .slider:before {
         -webkit-transform: translateX(2.4rem);
         -ms-transform: translateX(2.4rem);
         transform: translateX(2.4rem);
 }
       
       /* Rounded sliders */
-.container .container-form .step2 .slider.round {
+.container .container-form .step2 .step2-switch .slider.round {
         border-radius: 34px;
 }
       
-.container .container-form .step2 .slider.round:before {
+.container .container-form .step2 .step2-switch .slider.round:before {
         border-radius: 50%;
 }
 
 
-.sw-option1 {
+.container .container-form .step2 .step2-switch .sw-option1 {
         position: absolute;
         left: -6rem;
         padding-top: .3rem;
         font-weight: 600;
 }
 
-.sw-option2 {
+.container .container-form .step2 .step2-switch .sw-option2 {
         position: absolute;
         right: -5rem;
         padding-top: .3rem;
