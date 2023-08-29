@@ -13,6 +13,15 @@ steps.forEach(step => {
         });
 });
 
+// const serviceOptions = document.querySelectorAll('.service-option');
+  
+//   serviceOptions.forEach(option => {
+//     const checkbox = option.querySelector('.service-checkbox');
+//     option.addEventListener('click', () => {
+//       checkbox.checked = !checkbox.checked;
+//       option.classList.toggle('active', checkbox.checked);
+//     });
+
 
 // .step-content {
 //         display: none;
