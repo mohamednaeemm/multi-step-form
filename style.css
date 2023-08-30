@@ -430,11 +430,11 @@ background-color: hsl(229, 24%, 87%);
 
 
 .container .container-form .step4 {
-        /* display: none; */
+        display: none;
         position: absolute;
         top: 1rem;
         right: 1rem;
-        display: flex;
+        /* display: flex; */
         flex-direction: column;
         margin-bottom: 15px;
         width: 60%;
@@ -575,3 +575,30 @@ background-color: hsl(229, 24%, 87%);
         background-color: rgb(107, 161, 209);
 }
 
+.thankYou {
+        display: flex;
+        flex-direction: column;
+}
+
+.thankYou img {
+        width: 10%;
+        position: absolute;;
+        top: 25%;
+        right: 32%;
+}
+
+.thankYou h1 {
+        width: 70%;
+        position: absolute;
+        top: 40%;
+        right: -24%;
+}
+
+.thankYou p {
+        width: 55%;
+        position: absolute;
+        top: 53%;
+        right: 5%;
+        text-align: center;
+        color:hsl(210, 2%, 60%)
+}
