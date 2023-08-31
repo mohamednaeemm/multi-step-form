@@ -12,6 +12,7 @@ body {
         align-items: center;
         height: 100vh;
         margin: auto;
+        overflow: hidden;
         
 }
 
@@ -65,7 +66,7 @@ body {
         cursor: pointer;
 }
 
-.container .container-image .steps .step .circle:active , .container .container-image .steps .step .circle:hover {
+.container .container-image .steps .step .circle:hover, .active {
         background-color: rgb(123, 228, 238);
         color: black;
         border: 1px solid rgb(123, 228, 238);
@@ -114,18 +115,23 @@ body {
         margin-bottom: 2.5rem;
 }
 
+.container .container-form .step1 form {
+        display: flex;
+        flex-direction: column;
+}
+
 .container .container-form .step1 label {
         margin-bottom: .3rem;
 }
 
-.container .container-form .step1 input {
-        margin-bottom: 1rem;
+.container .container-form .step1  input {
         width: 88%;
         height: 2.5rem;
         border: 1px solid rgb(155, 157, 157);
         border-radius: 10px;
         font-size: 1rem;
         padding: 10px;
+        margin-bottom: 1rem;
 }
 
 .container .container-form .step1 button {
@@ -146,6 +152,29 @@ body {
 .container .container-form .step1 button:hover {
         background-color: rgb(107, 161, 209);
 }
+
+#name-error, #email-error, #phone-error {
+        display: inline;
+        position: relative;
+        color: red;
+        font-size: 12px;
+        top: .2rem;
+}
+
+#name-error {
+        left: 19rem;
+}
+
+#email-error  {     
+        
+        right: -15.5rem;
+}
+
+#phone-error {
+        right: -15rem;
+}
+
+
 
 /* ================= .container-form step2 ============================ */
 
@@ -195,17 +224,26 @@ body {
 }
 
 .container .container-form .step2 .step2-select .select-item img {
-        margin: 1rem 0;
+        margin-top: 1rem;
+        margin-bottom: .8rem;
 }
 
 .container .container-form .step2 .step2-select .select-item h2 {
         font-size: 1.2rem;
 }
 
+.container .container-form .step2 .step2-select .select-item span {
+        display: none;
+        position: absolute;
+        color: blue;
+        bottom: .5rem;
+        font-weight: 700;
+}
+
 .container .container-form .step2 .step2-switch {
         width: 88%;
         height: 15%;
-        background-color: rgb(154, 248, 248);
+        background-color: hsl(177, 44%, 85%);
         position: absolute;
         bottom: -5rem;
         right: 4rem;
@@ -575,8 +613,11 @@ background-color: hsl(229, 24%, 87%);
         background-color: rgb(107, 161, 209);
 }
 
+/* ================= .container-form ThankYou ============================ */
+
 .thankYou {
-        display: flex;
+        display: none;
+        /* display: flex; */
         flex-direction: column;
 }
 
