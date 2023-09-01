@@ -109,31 +109,31 @@
 
         <!--====================  step3  ========================-->
         <div class="step3" id="step3">
-          <h1>Select your plan</h1>
-          <p>You have the option of monthly or yearly billing.</p>
+          <h1>Pick add-ons</h1>
+          <p>Add-ons help enhance your gaming experience.</p>
           <div class="step3-select">
-            <label>
+            <label for="multiplayer">
               <div class="select-check">
                 <input type="checkbox" class="service-checkbox" id="multiplayer">
-                <h2 for="multiplayer">Online Service</h2>
+                <h2 id="h2Selected1">Online Service</h2>
                 <p>Access to multiplayer games</p>
-                <span class="service-price">+$1/mo</span>
+                <span class="service-price" id="service1">+$1/mo</span>
               </div>
             </label>
-            <label>
+            <label for="storage">
               <div class="select-check">
                 <input type="checkbox" class="service-checkbox" id="storage">
-                <h2 for="storage">Larger storage</h2>
+                <h2 id="h2Selected2">Larger storage</h2>
                 <p>Extra 1TB of cloud save</p>
-                <span class="service-price">+$2/mo</span>
+                <span class="service-price" id="service2">+$2/mo</span>
               </div>
             </label>
-            <label>
+            <label for="custom-profile">
               <div class="select-check">
                 <input type="checkbox" class="service-checkbox" id="custom-profile">
-                <h2 for="custom-profile">Customizable Profile</h2>
+                <h2 id="h2Selected3">Customizable Profile</h2>
                 <p>Custom theme on your profile</p>
-                <span class="service-price">+$2/mo</span>
+                <span class="service-price" id=service3>+$2/mo</span>
               </div>
             </label>
 
@@ -148,21 +148,23 @@
           <p>Double-check everything looks OK before confirming.</p>
           <div class="step4-select">
               <div class="marked">
-                <h2>Acrade(Monthly)</h2>
-                <p>Change</p>
-                <span class="service-price">+$1/mo</span>
+                <h2 id="typeChoosed">Acrade(Monthly)</h2>
+                <p id="backTwice">Change</p>
+                <span class="service-final" id="priceChoosed">+$1/mo</span>
               </div>
               <div class="line"><br></div>
-              <div class="marked">
-                <p for="storage">Online Service</p>
-                <span class="service-price">+$1/mo</span>
-                <p>Larger Storage</p>
-                <span class="service-price">+$2/mo</span>
+              <div class="markedSecond">
+                <p id="step4p1"></p>
+                <span class="service-final" id="step4span1"></span>
+                <p id="step4p2"></p>
+                <span class="service-final" id="step4span2"></span>
+                <p id="step4p3"></p>
+                <span class="service-final" id="step4span3"></span>
               </div>
             </div>
               <div class="total">
-                <p>Total (per month)</p>
-                <span class="service-price">+$12/mo</span>
+                <p id="totaltime">Total (per month)</p>
+                <span class="service-final" id="totalmoney"></span>
               </div>
             <div class="goBack" id="back3">Go Back</div>
           <button type="submit">Confirm</button>
