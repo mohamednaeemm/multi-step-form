@@ -63,10 +63,9 @@ body {
         margin-top: .7rem;
         border: 1px solid white;
         color: white;
-        cursor: pointer;
 }
 
-.container .container-image .steps .step .circle:hover, .active {
+.active {
         background-color: rgb(123, 228, 238);
         color: black;
         border: 1px solid rgb(123, 228, 238);
@@ -541,32 +540,7 @@ body {
         font-weight: 800;
 }
 
-/* .container .container-form .step4 .step4-select .marked p:nth-child(2) {
-        position: absolute;
-        top: 4rem;
-        left: 2rem;
-}
 
-.container .container-form .step4 .step4-select .marked p:nth-child(2):hover {
-        text-decoration: underline;
-        color:rgb(130, 155, 225);
-        cursor: pointer;
-        
-}
-
-.container .container-form .step4 .step4-select .marked p:nth-child(1) {
-        position: absolute;
-        top: 2.7rem;
-        left: 2rem;
-}
-
-
-
-.container .container-form .step4 .step4-select .marked p:nth-child(3) {
-        position: absolute;
-        top: 4.5rem;
-        left: 2rem;
-} */
 .container .container-form .step4 .step4-select .markedSecond p {
         position: relative;
         top: 2.2rem;
@@ -585,21 +559,6 @@ body {
 
 }
 
-/* .container .container-form .step4 .step4-select .marked span {
-        position: absolute;
-        right: -1rem;
-        top: 1.7rem;
-        color: rgb(30, 28, 28)
-}
-
-.container .container-form .step4 .step4-select .marked span:nth-child(3) {
-        font-weight: 600;
-}
-
-.container .container-form .step4 .step4-select .marked span:nth-child(2) {
-        right: -1rem;
-        top: 3.5rem;
-} */
 
 .container .container-form .step4 .total p {
         position: absolute;
@@ -673,4 +632,8 @@ body {
         right: 5%;
         text-align: center;
         color:hsl(210, 2%, 60%)
+}
+
+@media screen {
+        
 }
