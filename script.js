@@ -235,18 +235,20 @@ document.addEventListener("DOMContentLoaded", function() {
         const typeChoosed = document.getElementById('typeChoosed');
         const priceChoosed = document.getElementById('priceChoosed');
         const toggleButton = document.getElementById("slider");
-        const totalTime = document.getElementById("totaltime")
+        const totalTime = document.getElementById("totaltime");
+        const totalmoney = document.getElementById("totalmoney");
     
         selectItem.forEach(item => {
             item.addEventListener('click', function() {
                 // Remove 'checkboxeffect' class from all items
                 selectItem.forEach(otherItem => {
                     otherItem.classList.remove('checkboxeffect');
+                    totalmoney.textContent = "";
                 });
+                
     
                 // Add 'checkboxeffect' class to the clicked item
                 item.classList.add('checkboxeffect');
-    
                 // Update the content of the marked element
                 const itemName = item.querySelector('h2').textContent;
                 const itemPriceElement = item.querySelector('.firstP, .secondP, .thirdP');
@@ -258,8 +260,10 @@ document.addEventListener("DOMContentLoaded", function() {
                         // Do something specific if the itemName contains "arcade"
                         typeChoosed.textContent = itemName + "(Yearly)";
                         totalTime.textContent = "Total (per year)";
+                        totalmoney.textContent = `$ ${parseInt(item.textContent.match(/\d+/))}/yr`;
                     } else {
                         typeChoosed.textContent = itemName + "(Monthly)";
+                        totalmoney.textContent = `$ ${parseInt(item.textContent.match(/\d+/))}/mo`;
                     }
                 toggleButton.addEventListener("click", function() {
                         selectItem.forEach(otherItem => {
@@ -267,11 +271,11 @@ document.addEventListener("DOMContentLoaded", function() {
                                 priceChoosed.textContent = "";
                                 typeChoosed.textContent = "";
                                 
-                            });
+                });
                 });
             });
         });
-    });
+});
 
 
 
@@ -407,6 +411,8 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("service2"),
             document.getElementById("service3")
         ];
+
+        
     
         toggleButton.addEventListener('click', function() {
             serviceCheckboxes.forEach((checkbox, index) => {
@@ -442,44 +448,52 @@ document.addEventListener("DOMContentLoaded", function() {
       
         
         
-   
+
+    
+    
+    function calculateTotal() {
+        let totalSum = 0;
+        const totalmoney = document.getElementById('totalmoney');
+        const priceChoosed = document.getElementById("priceChoosed");
+        
+        // Set the initial value of totalmoney to 0
+        totalmoney.textContent = '0';
+        
+        // Add event listeners to checkboxes
+        const serviceCheckboxes = document.querySelectorAll('.service-checkbox');
+        
+        serviceCheckboxes.forEach((checkbox, index) => {
+            checkbox.addEventListener('change', function() {
+                // Initialize the total sum with the price from priceChoosed
+                totalSum = parseInt(priceChoosed.textContent.match(/\d+/)) || 0;
+        
+                // Iterate over all checkboxes to calculate the total sum again
+                serviceCheckboxes.forEach((cb, i) => {
+                    const servicePriceText = document.getElementById(`service${i + 1}`).textContent;
+                    const servicePriceMatch = servicePriceText.match(/\+\$(\d+)/);
+        
+                    if (cb.checked && servicePriceMatch) {
+                        const servicePrice = parseInt(servicePriceMatch[1]);
+                        totalSum += servicePrice;
+                    }
+                });
+        
+                // Concatenate the total sum and the price from priceChoosed as strings
+                const concatenatedValue = totalSum.toString();
+                if (priceChoosed.textContent.toLowerCase().includes('yr')) {
+                        totalmoney.textContent = "$" + concatenatedValue + '/yr'; 
+                }else {
+                        totalmoney.textContent = "$" + concatenatedValue + '/mo'; 
+                }
+            });
+        });
+    }
+    
+    // You can call the function whenever you want to calculate the total
+    calculateTotal();
     
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const priceChoosed = document.getElementById('priceChoosed');
-        const step4span1 = document.getElementById('step4span1');
-        const step4span2 = document.getElementById('step4span2');
-        const step4span3 = document.getElementById('step4span3');
-        const totalmoney = document.getElementById("totalmoney");
     
-        // Function to extract and concatenate numbers from a string
-        function extractAndConcatNumbers(text) {
-            const numbers = text.match(/\d+/g); // Extract all numbers from the string
-            if (numbers) {
-                return numbers.map(Number).reduce((sum, num) => sum + num, 0);
-            }
-            return 0; // Return 0 if no numbers found
-        }
-    
-        // Function to calculate the total
-        function calculateTotal() {
-            const value1 = extractAndConcatNumbers(priceChoosed.textContent);
-            const value2 = extractAndConcatNumbers(step4span1.textContent);
-            const value3 = extractAndConcatNumbers(step4span2.textContent);
-            const value4 = extractAndConcatNumbers(step4span3.textContent);
-    
-            const total = value1 + value2 + value3 + value4;
-            const formattedTotal = "$" + total;
-            totalmoney.textContent = formattedTotal;
-        }
-    
-        // Calculate the initial total
-        calculateTotal();
-    
-        // Add event listeners to update the total when content changes
-        priceChoosed.addEventListener('input', calculateTotal);
-        step4span1.addEventListener('input', calculateTotal);
-        step4span2.addEventListener('input', calculateTotal);
-        step4span3.addEventListener('input', calculateTotal);
-    });
+
+
     
