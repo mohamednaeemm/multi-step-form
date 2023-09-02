@@ -893,14 +893,14 @@ body {
         
         .container .container-form .step3 .goBack {
                 position: absolute;
-                bottom: -7.5rem;
+                bottom: -9.5rem;
                 left: -1rem;
         }
         
         .container .container-form .step3 button {
                 margin-right: 1rem;
                 position: absolute;
-                bottom: -8rem;
+                bottom: -10rem;
                 right: -1rem;
                 width: 40%;
                 height: 2.5rem;
@@ -1022,14 +1022,14 @@ body {
         
         .container .container-form .step4 .goBack {
                 position: absolute;
-                bottom: -11.4rem;
+                bottom: -13.4rem;
                 left: 0;
         }
         
         .container .container-form .step4 button {
                 margin-right: 1rem;
                 position: absolute;
-                bottom: -12rem;
+                bottom: -14rem;
                 right: -1rem;
                 width: 35%;
         }
