@@ -634,6 +634,438 @@ body {
         color:hsl(210, 2%, 60%)
 }
 
-@media screen {
+
+
+@media (max-width: 392px) {
+        body {
+            display: flex;
+            min-height: 100vh;
+            margin: 0;
+        }
+    
+        .container {
+            width: 90vw;
+            max-width: 95%;
+            height: 65%;
+            background-color: white;
+            
+        }
+    
+        .container .container-image {
+            content: "";
+            background-image: url('assets/bg-sidebar-mobile.svg');
+            background-size: cover;
+            height: 50%;
+            width: 100vw;
+            position: relative;
+            top: -8rem;
+            left: -1.24rem;
+            z-index: -1;
+        }
+    
+        .container .container-image .steps  {
+                
+            flex-direction: row;
+            justify-content: center;
+            padding-top: 3rem;
+        }
+    
+
         
-}
+        
+        .container .container-image .steps .step .step-description {
+                display: none;
+        }
+        
+        .container .container-image .steps .step .step-title {
+                display: none;
+        }
+        
+        .container .container-image .steps .step .step-text {
+                display: none;
+        }
+        .container .container-form .step1 {
+                display: none;
+                position: absolute;
+                top: 1rem;
+                left: 1rem;
+                flex-direction: column;
+                margin-bottom: 15px;
+                width: 100%;
+        }
+        
+        .container .container-form .step1 h1 {
+                margin-top: 1rem;
+        }
+        
+        .container .container-form .step1 p {
+                margin-top: -1rem;
+                margin-bottom: 2.5rem;
+                text-align: left;
+                width: 90%;
+        }
+        
+        .container .container-form .step1 button {
+                bottom: -7rem;
+                right: 1rem;
+                width: 30%;
+        }
+        
+        #name-error, #email-error, #phone-error {
+                display: inline;
+                position: relative;
+                color: red;
+                font-size: 12px;
+                top: .2rem;
+                left: 5rem;
+        }
+        
+        #name-error {
+                left: 9rem;
+        }
+        .container .container-form .step2 {
+                display: none;
+                position: absolute;
+                top: 1rem;
+                left: 1rem;
+                /* display: flex; */
+                flex-direction: column;
+                margin-bottom: 15px;
+                width: 69%;
+        }
+        
+        .container .container-form .step2 h1 {
+                margin-top: 1rem;
+        }
+        
+        .container .container-form .step2 p {
+                color: rgb(155, 157, 157);
+                margin-top: -1rem;
+                margin-bottom: .5rem;
+        }
+        
+        .container .container-form .step2 .step2-select {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+        }
+        
+        .container .container-form .step2 .step2-select .select-item {
+                width: 80vw;
+                padding-right: 2rem;
+                border-radius: 1rem;
+                cursor: pointer;
+                height: 4rem;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+        }
+        
+        
+        
+        .container .container-form .step2 .step2-select .select-item img {
+                left: -6rem;
+                top: 0;
+        }
+        
+        .container .container-form .step2 .step2-select .select-item h2 {
+                font-size: 1.2rem;
+        }
+        
+        .container .container-form .step2 .step2-select .select-item span {
+                padding-top: 10rem;
+        }
+        
+        .container .container-form .step2 .step2-switch {
+                width: 18rem;
+                height: 12%;
+                position: absolute;
+                bottom: -4rem;
+                right: -4rem;
+        }
+        
+        .container .container-form .step2 .step2-switch .switch {
+                position: absolute;
+                display: inline-block;
+                width: 4.5rem;
+                height: 2rem;
+                bottom: .1rem;
+                right: 5rem;
+        }
+           
+              
+        .container .container-form .step2 .step2-switch .slider:before {
+                position: absolute;
+                content: "";
+                height: 1.8rem;
+                width: 2rem;
+                left: .25rem;
+                bottom: .1rem;
+        }
+              
+        .container .container-form .step2 .step2-switch input:checked + .slider:before {
+                -webkit-transform: translateX(2.4rem);
+                -ms-transform: translateX(2.4rem);
+                transform: translateX(2rem);
+        }
+              
+              /* Rounded sliders */
+        
+        
+        
+        .container .container-form .step2 .goBack {
+                position: absolute;
+                bottom: -10.5rem;
+                left: .2rem;
+                color: rgb(138, 133, 133);
+                font-size: 1rem;
+        }
+        
+        .container .container-form .step2 button {
+                position: absolute;
+                bottom: -11rem;
+                right: -5rem;
+                width: 40%;
+        }
+        .container .container-form .step3 {
+                display: none;
+                position: absolute;
+                top: .5rem;
+                right: 1rem;
+                /* display: flex; */
+                flex-direction: column;
+                margin-bottom: 15px;
+                width: 90%;
+        }
+        
+        .container .container-form .step3 h1 {
+                margin-top: 1rem;
+        }
+        
+        .container .container-form .step3 p {
+                color: rgb(155, 157, 157);
+                margin-top: -1rem;
+                margin-bottom: .5rem;
+        }
+        
+        .container .container-form .step3 .step3-select {
+                display: flex;
+                gap: 1rem;
+                flex-direction: column;
+        }
+        
+        .container .container-form .step3 .step3-select .select-check {
+                width: 100%;
+                padding-left: 1rem;
+                padding-right: 3rem;
+                border-radius: 1rem;
+                height: 4.5rem;
+                position: relative;
+        }
+        
+        .container .container-form .step3 .step3-select .select-check input {
+                width: 1.2rem;
+                height: 1.2rem;
+                border-radius: 10px;
+                margin-top: 1.5rem;
+        }
+        
+        .container .container-form .step3 .step3-select .select-check h2 {
+                position: absolute;
+                top: -.5rem;
+                left: 5rem;
+                font-weight: 600;
+                font-size: 1.2rem;
+        }
+        
+        .container .container-form .step3 .step3-select .select-check p {
+                position: absolute;
+                top: 3.2rem;
+                left: 5rem;
+        }
+        
+        .container .container-form .step3 .step3-select .select-check span {
+                position: absolute;
+                right: 1rem;
+                top: 1.5rem;
+                color: rgb(171, 166, 166)
+        }
+        
+        .container .container-form .step3 .goBack {
+                position: absolute;
+                bottom: -7.5rem;
+                left: -1rem;
+        }
+        
+        .container .container-form .step3 button {
+                margin-right: 1rem;
+                position: absolute;
+                bottom: -8rem;
+                right: -1rem;
+                width: 40%;
+                height: 2.5rem;
+        }
+
+        /* ================= .container-form step4 ============================ */
+        
+        
+        
+        
+        .container .container-form .step4 {
+                display: none;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                /* display: flex; */
+                flex-direction: column;
+                margin-bottom: 15px;
+                width: 90%;
+        }
+        
+        .container .container-form .step4 h1 {
+                margin-top: 1rem;
+        }
+        
+        .container .container-form .step4 p {
+                margin-top: -1rem;
+                margin-bottom: .5rem;
+        }
+        
+        .container .container-form .step4 .step4-select {
+                display: flex;
+                flex-direction: column;
+                width: 20rem;
+                height: 11.5rem;
+                
+        }
+        
+        
+        .container .container-form .step4 .step4-select .marked {
+                width: 88%;
+                padding-left: 1rem;
+                padding-right: 3rem;
+                height: 4rem;
+                position: relative;
+        }
+        
+        
+        
+        .container .container-form .step4 .step4-select .marked h2 {
+                position: absolute;
+                top: .3rem;
+                left: 2rem;
+                font-weight: 600;
+                font-size: 1rem;
+        }
+        
+        .container .container-form .step4 .step4-select .line {
+                background-color: rgb(217, 209, 209);
+                height: .1rem;
+                width: 77%;
+                position: absolute;
+                top: 12rem;
+                right: 3.8rem;
+        }
+        
+        .container .container-form .step4 .step4-select .marked p {
+                position: absolute;
+                top: 4rem;
+                left: 2rem;
+                text-decoration: underline;
+                color:rgb(130, 155, 225);
+                cursor: pointer;
+        
+        }
+        
+        .container .container-form .step4 .step4-select .marked span {
+                position: absolute;
+                top: 2.5rem;
+                right: -1.7rem;
+                
+                font-weight: 800;
+        }
+        
+        
+        .container .container-form .step4 .step4-select .markedSecond p {
+                position: relative;
+                top: 2.2rem;
+                margin: 0;
+                line-height: 0.5;
+                left: 2rem;
+        
+        }
+        
+        .container .container-form .step4 .step4-select .markedSecond span {
+                position: relative;
+                left: 24rem;
+                top: 1.5rem;
+                margin: 0;
+                line-height: 0.5;
+        
+        }
+        
+        
+        .container .container-form .step4 .total p {
+                position: absolute;
+                left: 1.7rem;
+                bottom: -2rem;
+        }
+        
+        .container .container-form .step4 .total span {
+                position: absolute;
+                right: 2rem;
+                bottom: -2rem;
+                color: blue;
+                font-size: 1.2rem;
+                font-weight: 700;
+        }
+        
+        .container .container-form .step4 .goBack {
+                position: absolute;
+                bottom: -11.4rem;
+                left: 0;
+        }
+        
+        .container .container-form .step4 button {
+                margin-right: 1rem;
+                position: absolute;
+                bottom: -12rem;
+                right: -1rem;
+                width: 35%;
+        }
+        
+        
+        /* ================= .container-form ThankYou ============================ */
+        
+        .thankYou {
+                display: none;
+                /* display: flex; */
+                flex-direction: column;
+        }
+        
+        .thankYou img {
+                width: 20%;
+                position: absolute;;
+                top: 25%;
+                right: 40%;
+        }
+        
+        .thankYou h1 {
+                width: 70%;
+                position: absolute;
+                top: 40%;
+                right: .7rem;
+        }
+        
+        .thankYou p {
+                width: 90%;
+                position: absolute;
+                top: 53%;
+                right: 1.7rem;
+                text-align: center;
+        }
+        
+        
+        
+    }
+    
