@@ -35,7 +35,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [](https://mohamednaeemm.github.io/multi-step-form/)
+- Live Site URL: [https://mohamednaeemm.github.io/multi-step-form/](https://mohamednaeemm.github.io/multi-step-form/)
 
 
 ### Built with
