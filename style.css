@@ -735,6 +735,11 @@ body {
         width: 25%;
     }
 
+    .form-step3 {
+        gap: 1rem;
+        padding: 1rem;  
+    }
+
     .step3-choices .choice {
         gap: 2rem;
     }
