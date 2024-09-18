@@ -736,8 +736,7 @@ body {
     }
 
     .form-step3 {
-        gap: 1rem;
-        padding: 1rem;  
+        gap: 2rem;
     }
 
     .step3-choices .choice {
@@ -749,6 +748,10 @@ body {
         display: flex;
         gap: .5rem;
         align-items: center;
+    }
+
+    .step3-footer {
+        margin-top: 1.5rem;
     }
 
     .form-step4 {
