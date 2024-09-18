@@ -1,6 +1,6 @@
 # Multi-Step-Form
 
-![Design preview for the Multi-Step-Form app](./desktop-preview.png)
+![Design preview for the Multi-Step-Form app](./desktop-preview.jpg)
 
 
 Built with
