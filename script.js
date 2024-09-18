@@ -1,376 +1,279 @@
-document.addEventListener("DOMContentLoaded", function () {
-        let firstCircle = document.getElementById("circle1")
-        firstCircle.classList.add('active');
-        
-        let step1 = document.getElementById("step1");
-        if(step1){
-                step1.style.display = "flex";
-        }
+let itemSelected = false; // Track if an item is selected
+
+
+// Get elements
+const toggleBody = document.getElementById('toggleBody');
+const toggleCircle = document.getElementById('toggleCircle');
+
+let firstPrice = document.querySelector('.firstPrice');
+let secondPrice = document.querySelector('.secondPrice');
+let thirdPrice = document.querySelector('.thirdPrice');
+
+let servicePrice1 = document.getElementById('servicePrice1');
+let servicePrice2 = document.getElementById('servicePrice2');
+let servicePrice3 = document.getElementById('servicePrice3');
+
+// step4 head
+let monthOrYear = document.querySelector('.month-year-head');
+let monthOrYearPrice = document.querySelector('.month-year-price');
+
+const changePlan = document.getElementById('change-plan')
+
+
+function calculateTotal() {
+    let total = 0;
+
+    // Get the base price from .month-year-price
+    const basePriceText = document.querySelector('.month-year-price')?.innerText;
+    const basePrice = parseFloat(basePriceText.replace(/[^0-9.]/g, "")); 
+    total += basePrice;
+
+    // Get additional prices from .option-choosed spans
+    document.querySelectorAll('.option-choosed span').forEach(span => {
+        const priceText = span.innerText.replace(/[^0-9.]/g, "");
+        const price = parseFloat(priceText); 
+        total += price; 
     });
 
+    // Update the total in the .main-total span
+    const totalElement = document.querySelector('.main-total span');
 
-
-
-        // submit1
-
-document.getElementById("submit1").addEventListener("click", function (event) {
-        event.preventDefault();
-
-        const emailInput = document.getElementById("email"); 
-        const nameInput = document.getElementById('name');
-        const phoneInput = document.getElementById('phone');
-
-        const nameError = document.getElementById('name-error');
-        const emailError = document.getElementById('email-error');
-        const phoneError = document.getElementById('phone-error');
-
-        nameError.textContent = '';
-        emailError.textContent = '';
-        phoneError.textContent = '';
-
-        let isValid = true; // Initialize isValid
-
-        if (nameInput.value.trim() === '') {
-                nameError.textContent = 'This field is required.';
-                isValid = false;
-        }
-
-        if (emailInput.value.trim() === '') {
-                emailError.textContent = 'This field is required.';
-                isValid = false;
-        } else if (!isValidEmail(emailInput.value.trim())) {
-                emailError.textContent = 'Enter a valid Email.';
-                isValid = false;
-        }
-
-        if (phoneInput.value.trim() === '') {
-                phoneError.textContent = 'This field is required.';
-                isValid = false;
-        } else if (!isValidPhone(phoneInput.value.trim())) {
-                phoneError.textContent = '11 Numbers Required';
-                isValid = false;
-        }
-
-        if (isValid) {
-                step1.style.display = "none";
-                step2.style.display = "flex";
-                circle1.classList.remove('active');
-                circle2.classList.add('active');
-        } else {
-                event.preventDefault();
-        }
-        });
-
-        function isValidEmail(email) {
-        const emailPattern = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$/;
-        return emailPattern.test(email);
-        }
-        function isValidPhone(phone) {
-        const phonePattern = /[0-9]{11}/;
-        return phonePattern.test(phone);
-        }
-
-        // Back Button
-
-document.getElementById("back1").addEventListener("click", function () {
-                step1.style.display = "flex";
-                step2.style.display = "none";
-                circle1.classList.add('active');
-                circle2.classList.remove('active');
-        });
-
-
-document.getElementById("back2").addEventListener("click", function () {
-        step2.style.display = "flex";
-        step3.style.display = "none";
-        circle2.classList.add('active');
-        circle3.classList.remove('active');
-});
-
-
-document.getElementById("back3").addEventListener("click", function () {
-        step3.style.display = "flex";
-        step4.style.display = "none";
-        circle3.classList.add('active');
-        circle4.classList.remove('active');
-});
-
-document.getElementById("backTwice").addEventListener("click", function () {
-        step2.style.display = "flex";
-        step4.style.display = "none";
-        circle2.classList.add('active');
-        circle4.classList.remove('active');
-});
-
-
-
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
-        const clickable = document.querySelectorAll('.clickable');
-        const submitButton2 = document.getElementById('button2');
-        const step2 = document.getElementById('step2');
-        const submitButton3 = document.getElementById("button3");
-        const submitButton4 = document.getElementById("button4");
-        const finalthank = document.getElementById("finalthank");
-        const toggleButton = document.getElementById("slider");
-
-      
-        clickable.forEach(function (selectItem) {
-          selectItem.addEventListener('click', function () {
-
-            submitButton2.addEventListener('click', function () {
-                        step3.style.display = "flex";
-                        step2.style.display = "none";
-                        circle3.classList.add('active');
-                        circle2.classList.remove('active');
-                        
-                })});
-        });
-        toggleButton.addEventListener('click', function () {
-
-                  submitButton2.addEventListener('click', function () {
-                              step2.style.display = "flex";
-                              step3.style.display = "none";
-                              circle2.classList.add('active');
-                              circle3.classList.remove('active');
-                              
-                      })});
-        
-        submitButton3.addEventListener('click', function () {
-                step4.style.display = "flex";
-                step3.style.display = "none";
-                circle4.classList.add('active');
-                circle3.classList.remove('active');
-        });
-        submitButton4.addEventListener('click', function () {
-                finalthank.style.display = "flex";
-                step4.style.display = "none";
-                circle4.classList.remove('active');
-        });
-});
-        
-
-
-
-
-        // toggle button.
-
-document.addEventListener("DOMContentLoaded", function() {
-        const toggleButton = document.getElementById("slider");
-        const spanToggles = document.querySelectorAll(".spantoggle"); // Use querySelectorAll to get all elements with the class
-        const selectItems = document.getElementsByClassName("select-item");
-        const firstP = document.querySelector(".firstP");
-        const secondP = document.querySelector(".secondP");
-        const thirdP = document.querySelector(".thirdP");
-        const service1 = document.getElementById("service1");
-        const service2 = document.getElementById("service2");
-        const service3 = document.getElementById("service3");
-        let clickCount = 0;
-        
-        toggleButton.addEventListener("click", function() {
-                console.log("clicked");
-                clickCount++;
-        
-                for (let i = 0; i < spanToggles.length; i++) {
-                        const spanToggle = spanToggles[i];
-        
-                        if (clickCount % 2 !== 0) {
-                                spanToggle.style.display = "inline";
-                                } else {
-                                spanToggle.style.display = "none";
-                                }
-                                
-        
-                for (let i = 0; i < selectItems.length; i++) {
-                        if (clickCount % 2 !== 0) {
-                        selectItems[i].style.height = "11rem";
-                        } else {
-                        selectItems[i].style.height = "10rem";
-                        }
-                        
-                if (clickCount % 2 !== 0) {
-                        firstP.textContent = "$90/yr";
-                        secondP.textContent = "$120/yr";
-                        thirdP.textContent = "$150/yr";
-                        service1.textContent = "+$10/yr";
-                        service2.textContent = "+$20/yr";
-                        service3.textContent = "+$20/yr";
-                        } else {
-                        firstP.textContent = "$9/mo";
-                        secondP.textContent = "$12/mo";
-                        thirdP.textContent = "$15/mo";
-                        service1.textContent = "+$1/mo";
-                        service2.textContent = "+$2/mo";
-                        service3.textContent = "+$2/mo";
-                        }
-        
-                }}})});
-        
-// Step 2 
-document.addEventListener("DOMContentLoaded", function() {
-        const selectItem = document.querySelectorAll('.select-item');
-        const typeChoosed = document.getElementById('typeChoosed');
-        const priceChoosed = document.getElementById('priceChoosed');
-        const toggleButton = document.getElementById("slider");
-        const totalTime = document.getElementById("totaltime");
-        const totalmoney = document.getElementById("totalmoney");
-        const serviceCheckboxes = document.querySelectorAll('.service-checkbox');
-    
-        selectItem.forEach(item => {
-            item.addEventListener('click', function() {
-                // Remove the effect first from all then add to the clicked one.
-                selectItem.forEach(otherItem => {
-                    otherItem.classList.remove('checkboxeffect');
-                    totalmoney.textContent = "";
-                });
-                serviceCheckboxes.forEach((checkbox, index) => {
-                        checkbox.checked = false; // Uncheck the checkbox
-                        checkbox.parentElement.classList.remove('checkboxeffect');
-                        document.getElementById('step4p1').textContent = "";
-                        document.getElementById('step4p2').textContent = "";
-                        document.getElementById('step4p3').textContent = "";
-                        document.getElementById('step4span1').textContent = "";
-                        document.getElementById('step4span2').textContent = "";
-                        document.getElementById('step4span3').textContent = "";
-                        
-                });
-
-
-                item.classList.add('checkboxeffect');
-                const itemName = item.querySelector('h2').textContent;
-                const itemPriceElement = item.querySelector('.firstP, .secondP, .thirdP');
-                const itemPrice = itemPriceElement ? itemPriceElement.textContent : "";
-
-                
-                priceChoosed.textContent = itemPrice;
-                if (itemPrice.toLowerCase().includes('yr')) {
-                        typeChoosed.textContent = itemName + "(Yearly)";
-                        totalTime.textContent = "Total (per year)";
-                        totalmoney.textContent = `$ ${parseInt(item.textContent.match(/\d+/))}/yr`;
-                    } else {
-                        typeChoosed.textContent = itemName + "(Monthly)";
-                        totalmoney.textContent = `$ ${parseInt(item.textContent.match(/\d+/))}/mo`;
-                    }
-                toggleButton.addEventListener("click", function() {
-                        selectItem.forEach(otherItem => {
-                                otherItem.classList.remove('checkboxeffect');
-                                priceChoosed.textContent = "";
-                                typeChoosed.textContent = "";
-                                
-                        });
-                        
-                        
-                });
-            });
-        });
-});
-
-                        
-
-
-document.addEventListener("DOMContentLoaded", function() {
-        const toggleButton = document.getElementById("slider");
-        const serviceCheckboxes = document.querySelectorAll('.service-checkbox');
-        const step4Elements = [
-            { p: document.getElementById('step4p1'), span: document.getElementById('step4span1') },
-            { p: document.getElementById('step4p2'), span: document.getElementById('step4span2') },
-            { p: document.getElementById('step4p3'), span: document.getElementById('step4span3') }
-        ];
-        const serviceHeaders = [
-            document.getElementById("h2Selected1"),
-            document.getElementById("h2Selected2"),
-            document.getElementById("h2Selected3")
-        ];
-        const services = [
-            document.getElementById("service1"),
-            document.getElementById("service2"),
-            document.getElementById("service3")
-        ];
-
-        
-    
-        toggleButton.addEventListener('click', function() {
-            serviceCheckboxes.forEach((checkbox, index) => {
-                checkbox.checked = false; // Uncheck the checkbox
-                checkbox.parentElement.classList.remove('checkboxeffect');
-    
-                const step4Element = step4Elements[index];
-                step4Element.p.textContent = "";
-                step4Element.span.textContent = "";
-            });
-        });
-    
-        serviceCheckboxes.forEach((checkbox, index) => {
-            checkbox.addEventListener('change', function() {
-                const step4Element = step4Elements[index];
-                const serviceHeader = serviceHeaders[index];
-                const service = services[index];
-    
-                if (checkbox.checked) {
-                    checkbox.parentElement.classList.add('checkboxeffect');
-                    if (step4Element.p.textContent === "") {
-                        step4Element.p.textContent = serviceHeader.textContent;
-                        step4Element.span.textContent = service.textContent;
-                    }
-                } else {
-                    checkbox.parentElement.classList.remove('checkboxeffect');
-                    step4Element.p.textContent = "";
-                    step4Element.span.textContent = "";
-                }
-            });
-        });
-    });
-      
-        
-        
-
-    
-    
-    function calculateTotal() {
-        let totalSum = 0;
-        const totalmoney = document.getElementById('totalmoney');
-        const priceChoosed = document.getElementById("priceChoosed");
-        
-        totalmoney.textContent = '0';
-        
-        // event listeners to checkboxes
-        const serviceCheckboxes = document.querySelectorAll('.service-checkbox');
-        
-        serviceCheckboxes.forEach((checkbox, index) => {
-            checkbox.addEventListener('change', function() {
-                // Initialize the total sum with the price from priceChoosed
-                totalSum = parseInt(priceChoosed.textContent.match(/\d+/)) || 0;
-        
-                // Iterate over all checkboxes to calculate the total sum again
-                serviceCheckboxes.forEach((cb, i) => {
-                    const servicePriceText = document.getElementById(`service${i + 1}`).textContent;
-                    const servicePriceMatch = servicePriceText.match(/\+\$(\d+)/);
-        
-                    if (cb.checked && servicePriceMatch) {
-                        const servicePrice = parseInt(servicePriceMatch[1]);
-                        totalSum += servicePrice;
-                    }
-                });
-        
-                // Concatenate the total sum and the price from priceChoosed as strings
-                const concatenatedValue = totalSum.toString();
-                if (priceChoosed.textContent.toLowerCase().includes('yr')) {
-                        totalmoney.textContent = "$" + concatenatedValue + '/yr'; 
-                }else {
-                        totalmoney.textContent = "$" + concatenatedValue + '/mo'; 
-                }
-            });
-        });
+    if(monthOrYearPrice.innerHTML.includes('yr')) {
+        totalElement.innerText = `$${total}/yr`; 
+    } else {
+        totalElement.innerText = `$${total}/mo`; 
     }
-    
-    calculateTotal();
-    
-
-    
+}
 
 
+
+
+changePlan.addEventListener('click', () => {
+    currentStep = 2;
+    showStep(currentStep);
+});
+
+const chosenOptionsContainer = document.querySelector('.main-box');
+
+document.querySelectorAll('.choice').forEach(choice => {
+    choice.addEventListener('click', () => {
+        const checkbox = choice.querySelector('.choice-checkbox');
+        const h3 = choice.querySelector('.choice-label h3').innerText;
+        const span = choice.querySelector('.service-price').innerText;
+
+        // Toggle active class and checkbox
+        choice.classList.toggle('active');
+        checkbox.checked = !checkbox.checked;
+
+        // Get all existing chosen options to find matching one
+        const existingOptions = Array.from(chosenOptionsContainer.children);
+        let existingOption = existingOptions.find(option => {
+            const optionH4 = option.querySelector('h4');
+            return optionH4 && optionH4.innerText === h3; // Check if optionH4 exists before reading innerText
+        });
+
+        if (checkbox.checked) {
+            // If checkbox is checked, add the option to chosenOptionsContainer
+            if (!existingOption) {
+                const chosenDiv = document.createElement('div');
+                chosenDiv.classList.add('option-choosed');
+                chosenDiv.innerHTML = `<h4>${h3}</h4><span>${span}</span>`;
+                chosenOptionsContainer.appendChild(chosenDiv);
+            }
+        } else {
+            // If checkbox is unchecked, remove the option from chosenOptionsContainer
+            if (existingOption) {
+                chosenOptionsContainer.removeChild(existingOption);
+            }
+        }
+        calculateTotal();
+    });
+
+});
+
+// Toggle functionality form2
+toggleBody.addEventListener('click', () => {
+    document.querySelectorAll('.step2-item').forEach(item => {
+            item.classList.remove('item-clicked');
+            itemSelected = false;
+    });
+
+    // Remove selected choices step 3
+    document.querySelectorAll('.choice').forEach(choice => {
+            const checkbox = choice.querySelector('.choice-checkbox');
     
+            // Toggle the 'active' class on the choice div
+            choice.classList.remove('active');
+    
+            // Toggle checkbox checked/unchecked state
+            checkbox.checked = false;
+        
+    });
+
+    document.querySelectorAll('.option-choosed').forEach(choosed => {
+        choosed.remove();
+    });
+    
+     // Toggle the 'active' class on the body to trigger styles
+    toggleBody.classList.toggle('toggleON');
+
+  // Add more functionality if needed when toggled
+    if (toggleBody.classList.contains('toggleON')) {
+        firstPrice.innerHTML = '$90/yr';
+        secondPrice.innerHTML = '$120/yr';
+        thirdPrice.innerHTML = '$150/yr';
+
+        servicePrice1.innerHTML = '+$10/yr';
+        servicePrice2.innerHTML = '+$20/yr';
+        servicePrice3.innerHTML = '+$20/yr';
+
+        document.querySelectorAll('.step2-item').forEach(item => {
+            // Create a new span for each item
+            const spanToggle = document.createElement('span');
+            spanToggle.innerHTML = '2 months free';
+            spanToggle.classList.add('spanToggle');
+            item.appendChild(spanToggle);
+        });
+
+    } else {
+        firstPrice.innerHTML = '$9/mo';
+        secondPrice.innerHTML = '$12/mo';
+        thirdPrice.innerHTML = '$15/mo';
+
+        servicePrice1.innerHTML = '+$1/mo';
+        servicePrice2.innerHTML = '+$2/mo';
+        servicePrice3.innerHTML = '+$2/mo';
+        
+        document.querySelectorAll('.step2-item').forEach(item => {
+            // Find the span element inside the item
+            const spanToggle = item.querySelector('.spanToggle');
+            if (spanToggle) {
+            item.removeChild(spanToggle); // Remove it if it exists
+            }
+        });
+        
+    }
+});
+
+
+// step2-choices
+
+document.querySelectorAll('.step2-item').forEach(item => {
+    item.addEventListener('click', () => {
+        document.querySelectorAll('.step2-item').forEach(
+            i => i.classList.remove('item-clicked')); 
+            // Remove class from all
+        item.classList.add('item-clicked'); // Add class to the clicked item
+        let totalMonthYear = document.querySelector('.main-total h3');
+        monthOrYearPrice.innerHTML = item.children[2].innerHTML;
+
+        if(monthOrYearPrice.innerHTML.includes('yr')){
+            monthOrYear.innerHTML = `${item.children[1].innerHTML}(Yearly)`;
+            totalMonthYear.innerHTML = 'Total (per Year)';
+        } else {
+            monthOrYear.innerHTML = `${item.children[1].innerHTML}(Monthly)`;
+            totalMonthYear.innerHTML = 'Total (per Month)';
+        }
+
+        itemSelected = true;
+        calculateTotal();
+    });
+});
+
+
+
+
+
+
+
+let currentStep = 1; // Track the current step
+
+// Validation functions
+function validateStep1() {
+    let isValid = true;
+
+    // Name validation
+    const name = document.getElementById('name').value.trim();
+    const nameError = document.getElementById('nameError');
+    if (name === '') {
+        nameError.innerText = 'Name is required';
+        isValid = false;
+    } else {
+        nameError.innerText = ''; // Clear the error message if valid
+    }
+
+    // Email validation
+    const email = document.getElementById('email').value.trim();
+    const emailError = document.getElementById('emailError');
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple email regex
+    if (!emailPattern.test(email)) {
+        emailError.innerText = 'Please enter a valid email address';
+        isValid = false;
+    } else {
+        emailError.innerText = ''; // Clear the error message if valid
+    }
+
+    // Phone validation
+    const phone = document.getElementById('phone').value.trim();
+    const phoneError = document.getElementById('phoneError');
+    const phonePattern = /^\+?\d{1,3}?\s?\d{1,4}?\s?\d{1,9}$/; // Simple phone number pattern
+    if (!phonePattern.test(phone)) {
+        phoneError.innerText = 'Please enter a valid phone number';
+        isValid = false;
+    } else {
+        phoneError.innerText = ''; // Clear the error message if valid
+    }
+
+    return isValid;
+}
+
+function validateStep2() {
+    if(!itemSelected) {
+        alert('Please Select A Plan');
+    } else {
+        return itemSelected; // Step 2 is valid if an item is selected
+    }
+}
+
+function validateStep3() {
+    return true;
+}
+
+// Show specific step
+function showStep(stepNumber) {
+    document.querySelectorAll('.form-step').forEach(step => step.classList.remove('display'));
+    document.querySelector(`.form-step${stepNumber}`).classList.add('display');
+    document.querySelectorAll('.circle').forEach(step => step.classList.remove('active'));
+    if(currentStep <= 4) {
+        document.querySelector(`.step${stepNumber}`).classList.add('active');
+    }
+}
+
+// Next button logic
+document.querySelectorAll('.next').forEach(button => {
+    button.addEventListener('click', () => {
+        if (currentStep === 1 && validateStep1()) {
+            currentStep++;
+            showStep(currentStep);
+        } else if (currentStep === 2 && validateStep2()) {
+            currentStep++;
+            showStep(currentStep);
+        } else if (currentStep === 3 && validateStep3()) {
+            currentStep++;
+            showStep(currentStep);
+        } else if (currentStep === 4) {
+            currentStep++
+            showStep(currentStep);
+        }
+    });
+});
+
+// Back button logic
+document.querySelectorAll('.back').forEach(button => {
+    button.addEventListener('click', () => {
+        if (currentStep > 1) {
+            currentStep--;
+            showStep(currentStep);
+        }
+    });
+});

@@ -1,1071 +1,776 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 * {
-        padding: 0;
-        border: 0;
-        box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
 }
 
 body {
-        font-family: 'Open Sans', sans-serif;
-        background-color: rgb(179, 254, 252);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: auto;
-        overflow: hidden;
-        
+    font-family: "Roboto", 'Open Sans';
+    background-color: rgb(179, 254, 252);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;       
 }
 
 .container {
-        width: 70vw;
-        height: 90vh;
-        background-color: white;
-        border-radius: 1rem;
-        position: relative;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 70vw;
+    max-height: 90vh;
+    background-color: white;
+    display: flex;
+    gap: 1rem;
+    border-radius: 1rem;
 }
-
+    
 .container .container-image {
-        content: "";
-        background-image: url('assets/bg-sidebar-desktop.svg');
-        background-size: cover;
-        width: 20vw;
-        height: 85vh; 
-        position: absolute;
-        top: 1em;
-        left: 1rem;
-        border-radius: 1rem;
+    margin: 1rem;
+    content: "";
+    background-image: url('assets/bg-sidebar-desktop.svg');
+    background-size: cover;
+    min-height: 80vh;
+    border-radius: 1rem;
 }
 
-.container .container-image .steps {
-        z-index: 2;
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
+.steps {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    min-height: 50vh;
+    min-width: 20vw; 
+    gap: 2rem;
+}
+    
+.steps .step {
+    display: flex;
+    flex-direction: row;
 }
 
-.container .container-image .steps .step {
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 20px;
-}
-
-.container .container-image .steps .step .circle {
-        width: 2.5rem;
-        height: 2.5rem;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: bold;
-        margin-right: 1rem;
-        margin-left: 1rem;
-        margin-top: .7rem;
-        border: 1px solid white;
-        color: white;
+.circle {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border: 1px solid white;
+    color: white;
+    margin-right: 1.5rem;
+    border-radius: 50%;
 }
 
 .active {
-        background-color: rgb(123, 228, 238);
-        color: black;
-        border: 1px solid rgb(123, 228, 238);
+    background-color: rgb(123, 228, 238);
+    color: black;
+    border: 1px solid rgb(123, 228, 238);
 }
 
 
-.container .container-image .steps .step .step-description {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
+.step-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
-.container .container-image .steps .step .step-title {
-        font-size: .8rem;
-        margin-right: 10px;
-        color: rgb(200, 206, 206);
+.step-title {
+    font-size: .8rem;
+    color: rgb(200, 206, 206);
 }
 
-.container .container-image .steps .step .step-text {
-        font-size: 1rem;
-        color: white;
-        font-weight: bold;
+.step-text {
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
 }
 
-/* ================= .container-form step1 ============================ */
+/* =========== .container-form step1 ============ */
 
-.container .container-form .step1 {
-        display: none;
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        /* display: flex; */
-        flex-direction: column;
-        margin-bottom: 15px;
-        width: 60%;
+.container-form {
+    min-width: 40vw;
 }
 
-.container .container-form .step1 h1 {
-        margin-top: 2rem;
+.form-step1 {
+    display: none;
+    flex-direction: column;
+    min-height: 70vh;
+    justify-content: center;
+    gap: 3rem;
+    padding: 3rem;  
 }
 
-.container .container-form .step1 p {
+.step1-head {
+    display: flex; 
+    flex-direction: column;
+    gap: .2rem;
+}
+
+.step1-head h1 {
+    font-size: 2rem;
+}
+
+.step1-head p {
         color: rgb(155, 157, 157);
-        margin-top: -1rem;
-        margin-bottom: 2.5rem;
 }
 
-.container .container-form .step1 form {
-        display: flex;
-        flex-direction: column;
+.step1-main .form1 {
+    display: flex;
+    flex-direction: column;
 }
 
-.container .container-form .step1 label {
-        margin-bottom: .3rem;
+.form1 .input-group {
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
-.container .container-form .step1  input {
-        width: 88%;
-        height: 2.5rem;
-        border: 1px solid rgb(155, 157, 157);
-        border-radius: 10px;
-        font-size: 1rem;
-        padding: 10px;
-        margin-bottom: 1rem;
+.form1 label {
+    margin-bottom: .3rem;
 }
 
-.container .container-form .step1 button {
-        margin-right: 1rem;
-        position: absolute;
-        bottom: -5rem;
-        right: 3rem;
-        width: 20%;
-        height: 2.5rem;
-        border: none;
-        border-radius: 10px;
-        background-color: rgb(13, 43, 127);
-        color: white;
-        font-size: 1rem;
-        cursor: pointer;
+.form1 input {
+    height: 2.5rem;
+    border: 1px solid rgb(155, 157, 157);
+    border-radius: .7rem;
+    font-size: 1rem;
+    padding: .7rem;
+    margin-bottom: 1rem;
 }
 
-.container .container-form .step1 button:hover {
+.form1 button {
+    margin-top: 2rem;
+    width: 25%;
+    height: 2.5rem;
+    border: none;
+    background-color: rgb(13, 43, 127);
+    color: white;
+    font-size: 1rem;
+    align-self: flex-end;
+    cursor: pointer;
+    border-radius: .8rem;
+}
+
+.form1 button:hover {
         background-color: rgb(107, 161, 209);
 }
 
-#name-error, #email-error, #phone-error {
-        display: inline;
-        position: relative;
-        color: red;
-        font-size: 12px;
-        top: .2rem;
+.error-message {
+    color: red;
+    font-size: 0.875rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
-#name-error {
-        left: 19rem;
+/* ======= .container-form step2 ====== */
+
+.form-step2 {
+    display: none;
+    flex-direction: column;
+    min-height: 70vh;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 3rem;  
 }
 
-#email-error  {     
-        
-        right: -15.5rem;
+.step2-head {
+    display: flex; 
+    flex-direction: column;
+    gap: .2rem;
 }
 
-#phone-error {
-        right: -15rem;
+.step2-head h1 {
+    font-size: 2rem;
 }
 
-
-
-/* ================= .container-form step2 ============================ */
-
-.container .container-form .step2 {
-        display: none;
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        /* display: flex; */
-        flex-direction: column;
-        margin-bottom: 15px;
-        width: 60%;
-}
-
-.container .container-form .step2 h1 {
-        margin-top: 2rem;
-}
-
-.container .container-form .step2 p {
+.step2-head p {
         color: rgb(155, 157, 157);
-        margin-top: -1rem;
-        margin-bottom: 2.5rem;
 }
 
-.container .container-form .step2 .step2-select {
-        display: flex;
-        gap: 1rem;
+.step2-main-items {
+    display: flex;
+    gap: 1rem;
+    min-height: 20vh;
+    margin-right: 8rem;
 }
 
-.container .container-form .step2 .step2-select .select-item {
-        width: 27.5%;
-        border: 1px solid rgb(171, 179, 179);
-        padding-left: 1rem;
-        padding-right: 3rem;
-        border-radius: 1rem;
-        cursor: pointer;
-        height: 10rem;
+.step2-item {
+    max-width: 55%;
+    min-width: 42%;
+    min-height: 10%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: 1px solid rgb(171, 179, 179);
+    border-radius: 1rem;
+    cursor: pointer;
 }
 
-.container .container-form .step2 .step2-select .select-item:hover {
-        border-color: black;
+.step2-item:hover {
+    border-color: black;
 }
 
-
-.container .container-form .step2 .step2-select .select-item img {
-        margin-top: 1rem;
-        margin-bottom: .8rem;
+.item-clicked {
+    background-color: rgba(80, 106, 118, .2);
 }
 
-.container .container-form .step2 .step2-select .select-item h2 {
-        font-size: 1.2rem;
+.step2-item img {
+    width: 2.5rem;
+    margin-bottom: 2rem;
 }
 
-.container .container-form .step2 .step2-select .select-item span {
-        display: none;
-        position: absolute;
-        color: blue;
-        bottom: .5rem;
-        font-weight: 700;
+.step2-item p {
+    color: rgb(155, 157, 157);
 }
 
-.container .container-form .step2 .step2-switch {
-        width: 88%;
-        height: 15%;
-        background-color: hsl(177, 44%, 85%);
-        position: absolute;
-        bottom: -5rem;
-        right: 4rem;
-        border-radius: 10px;
+.step2-main-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: .5rem;
+    background-color: rgba(166, 224, 240, .7);
+    align-items: center;
+    border-radius: 1rem;
 }
 
-.container .container-form .step2 .step2-switch .switch {
-        position: absolute;
-        display: inline-block;
-        width: 4.5rem;
-        height: 2.1rem;
-        bottom: 0.4rem;
-        right: 12.5rem;
-}
-      
-.container .container-form .step2 .step2-switch .switch input { 
-        opacity: 0;
-        width: 0;
-        height: 0;
-}
-      
-.container .container-form .step2 .step2-switch .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: blue;
-        -webkit-transition: .4s;
-        transition: .4s;
-}
-      
-.container .container-form .step2 .step2-switch .slider:before {
-        position: absolute;
-        content: "";
-        height: 26px;
-        width: 26px;
-        left: 4px;
-        bottom: 4px;
-        background-color: white;
-        -webkit-transition: .4s;
-        transition: .4s;
-}
-      
-.container .container-form .step2 .step2-switch input:checked + .slider {
-        background-color: blue;
-}
-      
-.container .container-form .step2 .step2-switch input:focus + .slider {
-        box-shadow: 0 0 1px blue;
-}
-      
-.container .container-form .step2 .step2-switch input:checked + .slider:before {
-        -webkit-transform: translateX(2.4rem);
-        -ms-transform: translateX(2.4rem);
-        transform: translateX(2.4rem);
-}
-      
-      /* Rounded sliders */
-.container .container-form .step2 .step2-switch .slider.round {
-        border-radius: 34px;
-}
-      
-.container .container-form .step2 .step2-switch .slider.round:before {
-        border-radius: 50%;
+.toggle-body {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 25%;
+    height: 40px;
+    cursor: pointer;
+    background-color: blue;
+    border-radius: 2rem;
 }
 
-
-.container .container-form .step2 .step2-switch .sw-option1 {
-        position: absolute;
-        left: -6rem;
-        padding-top: .3rem;
-        font-weight: 600;
+.toggle-circle {
+    margin: .5rem;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
 }
 
-.container .container-form .step2 .step2-switch .sw-option2 {
-        position: absolute;
-        right: -5rem;
-        padding-top: .3rem;
-        font-weight: 600;
+.toggleON {
+    justify-content: flex-end;
 }
 
-.container .container-form .step2 .goBack {
-        position: absolute;
-        bottom: -10.5rem;
-        left: .2rem;
-        color: rgb(138, 133, 133);
-        font-size: 1rem;
-        cursor: pointer;
+.spanToggle {
+    color: blue;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-top: .5rem;
 }
 
-.container .container-form .step2 button {
-        margin-right: 1rem;
-        position: absolute;
-        bottom: -11rem;
-        right: 3rem;
-        width: 20%;
-        height: 2.5rem;
-        border: none;
-        border-radius: 10px;
-        background-color: rgb(13, 43, 127);
-        color: white;
-        font-size: 1rem;
-        cursor: pointer;
+.step2-footer {
+    display: flex;
+    justify-content: space-between;
 }
 
-.container .container-form .step2 button:hover {
+.step2-footer button {
+    width: 25%;
+    height: 2.5rem;
+    border: none;
+    background-color: rgb(13, 43, 127);
+    color: white;
+    font-size: 1rem;
+    align-self: flex-end;
+    cursor: pointer;
+    border-radius: .8rem;
+}
+
+.step2-footer button:hover {
         background-color: rgb(107, 161, 209);
 }
 
-
-/* ================= .container-form step3 ============================ */
-
-
-.container .container-form .step3 {
-        display: none;
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        /* display: flex; */
-        flex-direction: column;
-        margin-bottom: 15px;
-        width: 60%;
+.step2-footer span {
+    position: relative;
+    top: .5rem;
+    color: rgb(138, 133, 133);
+    font-size: 1rem;
+    cursor: pointer;
 }
 
-.container .container-form .step3 h1 {
-        margin-top: 2rem;
+
+/* ======= .container-form step3 ====== */
+
+.form-step3 {
+    display: none;
+    flex-direction: column;
+    min-height: 70vh;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 3rem;  
 }
 
-.container .container-form .step3 p {
+.step3-head {
+    display: flex; 
+    flex-direction: column;
+    gap: .2rem;
+}
+
+.step3-head h1 {
+    font-size: 2rem;
+}
+
+.step3-head p {
         color: rgb(155, 157, 157);
-        margin-top: -1rem;
-        margin-bottom: 2.5rem;
 }
 
-.container .container-form .step3 .step3-select {
-        display: flex;
-        gap: 1rem;
-        flex-direction: column;
+.step3-choices {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.container .container-form .step3 .step3-select .select-check {
-        width: 88%;
-        border: 1px solid rgb(171, 179, 179);
-        padding-left: 1rem;
-        padding-right: 3rem;
-        border-radius: 1rem;
-        cursor: pointer;
-        height: 4.5rem;
-        position: relative;
+.step3-choices .choice {
+    width: 100%;
+    height: 4.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid rgb(171, 179, 179);
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.container .container-form .step3 .step3-select .select-check:hover {
-        border-color: black;
+.step3-choices .choice:hover {
+    border-color: black;
 }
 
-.checkboxeffect {
-        border-color: black;
-        background-color: hsl(229, 24%, 87%);
+.step3-choices .choice input {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 10px;
 }
 
-.container .container-form .step3 .step3-select .select-check input {
-        width: 20px;
-        height: 20px;
-        border-radius: 10px;
-        margin-top: 1.5rem;
+.step3-choices .choice p, .service-price {
+    color: rgb(155, 157, 157);
 }
 
-.container .container-form .step3 .step3-select .select-check h2 {
-        position: absolute;
-        top: -.5rem;
-        left: 5rem;
-        font-weight: 600;
-        font-size: 1.2rem;
+.choice.active {
+    background-color: rgba(80, 106, 118, .2);
 }
 
-.container .container-form .step3 .step3-select .select-check p {
-        position: absolute;
-        top: 3.2rem;
-        left: 5rem;
+
+.step3-footer {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
 }
 
-.container .container-form .step3 .step3-select .select-check span {
-        position: absolute;
-        right: 1rem;
-        top: 1.5rem;
-        color: rgb(171, 166, 166)
+.step3-footer .goBack {
+    color: rgb(138, 133, 133);
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    top: 1rem;
 }
 
-.container .container-form .step3 .goBack {
-        position: absolute;
-        bottom: -5.5rem;
-        left: .25rem;
-        color: rgb(138, 133, 133);
-        font-size: 1rem;
-        cursor: pointer;
+.step3-footer button {
+    width: 25%;
+    height: 2.5rem;
+    border: none;
+    border-radius: .8rem;
+    background-color: rgb(13, 43, 127);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    -webkit-border-radius: .8rem;
 }
 
-.container .container-form .step3 button {
-        margin-right: 1rem;
-        position: absolute;
-        bottom: -6rem;
-        right: 3rem;
-        width: 20%;
-        height: 2.5rem;
-        border: none;
-        border-radius: 10px;
-        background-color: rgb(13, 43, 127);
-        color: white;
-        font-size: 1rem;
-        cursor: pointer;
+.step3-footer button:hover {
+    background-color: rgb(107, 161, 209);
 }
 
-.container .container-form .step3 button:hover {
-        background-color: rgb(107, 161, 209);
+
+/* ==== .container-form step4 ====== */
+
+.form-step4 {
+    display: none;
+    flex-direction: column;
+    min-height: 70vh;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 3rem;  
 }
 
-/* ================= .container-form step4 ============================ */
-
-
-
-
-.container .container-form .step4 {
-        display: none;
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        /* display: flex; */
-        flex-direction: column;
-        margin-bottom: 15px;
-        width: 60%;
+.step4-head {
+    display: flex; 
+    flex-direction: column;
+    gap: .2rem;
 }
 
-.container .container-form .step4 h1 {
-        margin-top: 2rem;
+.step4-head h1 {
+    font-size: 2rem;
 }
 
-.container .container-form .step4 p {
+.step4-head p {
         color: rgb(155, 157, 157);
-        margin-top: -1rem;
-        margin-bottom: 2.3rem;
 }
 
-.container .container-form .step4 .step4-select {
-        display: flex;
-        flex-direction: column;
-        border: 1px solid rgb(222, 238, 238);
-        border-radius: .5rem;
-        background-color: hsl(206, 100%, 93%);
-        width: 88%;
-        height: 11.5rem;
-        
+.step4-main {
+    width: 100%;
+    margin-right: 20rem;
 }
 
-
-.container .container-form .step4 .step4-select .marked {
-        width: 88%;
-        padding-left: 1rem;
-        padding-right: 3rem;
-        height: 4rem;
-        position: relative;
+.main-box {
+    background-color: rgba(165, 255, 248, .4);
+    min-height: auto;
+    padding: 1rem 2rem;
+    border-radius: .5rem;
 }
 
-
-
-.container .container-form .step4 .step4-select .marked h2 {
-        position: absolute;
-        top: .3rem;
-        left: 2rem;
-        font-weight: 600;
-        font-size: 1rem;
+.box-head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
-.container .container-form .step4 .step4-select .line {
-        background-color: rgb(217, 209, 209);
-        height: .1rem;
-        width: 77%;
-        position: absolute;
-        top: 14rem;
-        right: 5.8rem;
+.month-year {
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
 }
 
-.container .container-form .step4 .step4-select .marked p {
-        position: absolute;
-        top: 4rem;
-        left: 2rem;
-        text-decoration: underline;
-        color:rgb(130, 155, 225);
-        cursor: pointer;
-
+.month-year-head, .month-year-price {
+    font-weight: 700;
 }
 
-.container .container-form .step4 .step4-select .marked span {
-        position: absolute;
-        top: 2.5rem;
-        right: -1.7rem;
-        
-        font-weight: 800;
+.month-year span {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
-
-.container .container-form .step4 .step4-select .markedSecond p {
-        position: relative;
-        top: 2.2rem;
-        margin: 0;
-        line-height: 0.5;
-        left: 2rem;
-
+.box-head, .option-choosed {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: .5rem;
 }
 
-.container .container-form .step4 .step4-select .markedSecond span {
-        position: relative;
-        left: 24rem;
-        top: 1.5rem;
-        margin: 0;
-        line-height: 0.5;
-
+.option-choosed h4 {
+    color: rgb(110, 111, 111);
 }
 
-
-.container .container-form .step4 .total p {
-        position: absolute;
-        left: 1.7rem;
-        bottom: -6rem;
+.main-total {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: black;
+    font-weight: 900;
 }
 
-.container .container-form .step4 .total span {
-        position: absolute;
-        right: 5.4rem;
-        bottom: -4rem;
-        color: blue;
-        font-size: 1.2rem;
-        font-weight: 700;
+.main-total span {
+    font-size: 1.3rem;
 }
 
-.container .container-form .step4 .goBack {
-        position: absolute;
-        bottom: -10.4rem;
-        left: .25rem;
-        color: rgb(138, 133, 133);
-        font-size: 1rem;
-        cursor: pointer;
+.step4-footer {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    position: relative;
+    top: -1rem;
 }
 
-.container .container-form .step4 button {
-        margin-right: 1rem;
-        position: absolute;
-        bottom: -11rem;
-        right: 3rem;
-        width: 20%;
-        height: 2.5rem;
-        border: none;
-        border-radius: 10px;
-        background-color: rgb(13, 43, 127);
-        color: white;
-        font-size: 1rem;
-        cursor: pointer;
+.step4-footer .goBack {
+    color: rgb(138, 133, 133);
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    top: .5rem;
 }
 
-.container .container-form .step4 button:hover {
-        background-color: rgb(107, 161, 209);
+.step4-footer button {
+    width: 25%;
+    height: 2.5rem;
+    border: none;
+    border-radius: .8rem;
+    background-color: rgb(13, 43, 127);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
-/* ================= .container-form ThankYou ============================ */
+.step4-footer button:hover {
+    background-color: rgb(107, 161, 209);
+}
+
+/* ==== THANK YOU ====== */
 
 .thankYou {
-        display: none;
-        /* display: flex; */
-        flex-direction: column;
+    display: none; 
+    flex-direction: column;
+    min-height: 70vh;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 3rem;  
 }
 
 .thankYou img {
-        width: 10%;
-        position: absolute;;
-        top: 25%;
-        right: 32%;
+    width: 20%;
 }
 
 .thankYou h1 {
-        width: 70%;
-        position: absolute;
-        top: 40%;
-        right: -24%;
+    font-size: 2rem;
+    margin-bottom: 2rem;
 }
 
 .thankYou p {
-        width: 55%;
-        position: absolute;
-        top: 53%;
-        right: 5%;
-        text-align: center;
-        color:hsl(210, 2%, 60%)
+    width: 80%;
+    text-align: center;
+    color:hsl(210, 2%, 60%)
 }
 
+.display {
+    display: flex;
+}
 
+/* =========== RESPONSIVE ============ */
 
-@media (max-width: 392px) {
-        body {
-            display: flex;
-            min-height: 100vh;
-            margin: 0;
-        }
-    
-        .container {
-            width: 90vw;
-            max-width: 95%;
-            height: 65%;
-            background-color: white;
-            
-        }
-    
-        .container .container-image {
-            content: "";
-            background-image: url('assets/bg-sidebar-mobile.svg');
-            background-size: cover;
-            height: 50%;
-            width: 100vw;
-            position: relative;
-            top: -8rem;
-            left: -1.24rem;
-            z-index: -1;
-        }
-    
-        .container .container-image .steps  {
-                
-            flex-direction: row;
-            justify-content: center;
-            padding-top: 3rem;
-        }
-    
+/* Tablet screen (768px - 1024px) */
+@media (min-width: 769px) and (max-width: 1100px)  {
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 100vw;
+        min-height: 100vh;
+        flex-direction: column;
+        gap: 0;
+    }
 
-        
-        
-        .container .container-image .steps .step .step-description {
-                display: none;
-        }
-        
-        .container .container-image .steps .step .step-title {
-                display: none;
-        }
-        
-        .container .container-image .steps .step .step-text {
-                display: none;
-        }
-        .container .container-form .step1 {
-                display: none;
-                position: absolute;
-                top: 1rem;
-                left: 1rem;
-                flex-direction: column;
-                margin-bottom: 15px;
-                width: 100%;
-        }
-        
-        .container .container-form .step1 h1 {
-                margin-top: 1rem;
-        }
-        
-        .container .container-form .step1 p {
-                margin-top: -1rem;
-                margin-bottom: 2.5rem;
-                text-align: left;
-                width: 90%;
-        }
-        
-        .container .container-form .step1 button {
-                bottom: -7rem;
-                right: 1rem;
-                width: 30%;
-        }
-        
-        #name-error, #email-error, #phone-error {
-                display: inline;
-                position: relative;
-                color: red;
-                font-size: 12px;
-                top: .2rem;
-                left: 5rem;
-        }
-        
-        #name-error {
-                left: 9rem;
-        }
-        .container .container-form .step2 {
-                display: none;
-                position: absolute;
-                top: 1rem;
-                left: 1rem;
-                /* display: flex; */
-                flex-direction: column;
-                margin-bottom: 15px;
-                width: 69%;
-        }
-        
-        .container .container-form .step2 h1 {
-                margin-top: 1rem;
-        }
-        
-        .container .container-form .step2 p {
-                color: rgb(155, 157, 157);
-                margin-top: -1rem;
-                margin-bottom: .5rem;
-        }
-        
-        .container .container-form .step2 .step2-select {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-        }
-        
-        .container .container-form .step2 .step2-select .select-item {
-                width: 80vw;
-                padding-right: 2rem;
-                border-radius: 1rem;
-                cursor: pointer;
-                height: 4rem;
-                display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
-        }
-        
-        
-        
-        .container .container-form .step2 .step2-select .select-item img {
-                left: -6rem;
-                top: 0;
-        }
-        
-        .container .container-form .step2 .step2-select .select-item h2 {
-                font-size: 1.2rem;
-        }
-        
-        .container .container-form .step2 .step2-select .select-item span {
-                padding-top: 10rem;
-        }
-        
-        .container .container-form .step2 .step2-switch {
-                width: 18rem;
-                height: 12%;
-                position: absolute;
-                bottom: -4rem;
-                right: -4rem;
-        }
-        
-        .container .container-form .step2 .step2-switch .switch {
-                position: absolute;
-                display: inline-block;
-                width: 4.5rem;
-                height: 2rem;
-                bottom: .1rem;
-                right: 5rem;
-        }
-           
-              
-        .container .container-form .step2 .step2-switch .slider:before {
-                position: absolute;
-                content: "";
-                height: 1.8rem;
-                width: 2rem;
-                left: .25rem;
-                bottom: .1rem;
-        }
-              
-        .container .container-form .step2 .step2-switch input:checked + .slider:before {
-                -webkit-transform: translateX(2.4rem);
-                -ms-transform: translateX(2.4rem);
-                transform: translateX(2rem);
-        }
-              
-              /* Rounded sliders */
-        
-        
-        
-        .container .container-form .step2 .goBack {
-                position: absolute;
-                bottom: -10.5rem;
-                left: .2rem;
-                color: rgb(138, 133, 133);
-                font-size: 1rem;
-        }
-        
-        .container .container-form .step2 button {
-                position: absolute;
-                bottom: -11rem;
-                right: -5rem;
-                width: 40%;
-        }
-        .container .container-form .step3 {
-                display: none;
-                position: absolute;
-                top: .5rem;
-                right: 1rem;
-                /* display: flex; */
-                flex-direction: column;
-                margin-bottom: 15px;
-                width: 90%;
-        }
-        
-        .container .container-form .step3 h1 {
-                margin-top: 1rem;
-        }
-        
-        .container .container-form .step3 p {
-                color: rgb(155, 157, 157);
-                margin-top: -1rem;
-                margin-bottom: .5rem;
-        }
-        
-        .container .container-form .step3 .step3-select {
-                display: flex;
-                gap: 1rem;
-                flex-direction: column;
-        }
-        
-        .container .container-form .step3 .step3-select .select-check {
-                width: 100%;
-                padding-left: 1rem;
-                padding-right: 3rem;
-                border-radius: 1rem;
-                height: 4.5rem;
-                position: relative;
-        }
-        
-        .container .container-form .step3 .step3-select .select-check input {
-                width: 1.2rem;
-                height: 1.2rem;
-                border-radius: 10px;
-                margin-top: 1.5rem;
-        }
-        
-        .container .container-form .step3 .step3-select .select-check h2 {
-                position: absolute;
-                top: -.5rem;
-                left: 5rem;
-                font-weight: 600;
-                font-size: 1.2rem;
-        }
-        
-        .container .container-form .step3 .step3-select .select-check p {
-                position: absolute;
-                top: 3.2rem;
-                left: 5rem;
-        }
-        
-        .container .container-form .step3 .step3-select .select-check span {
-                position: absolute;
-                right: 1rem;
-                top: 1.5rem;
-                color: rgb(171, 166, 166)
-        }
-        
-        .container .container-form .step3 .goBack {
-                position: absolute;
-                bottom: -9.5rem;
-                left: -1rem;
-        }
-        
-        .container .container-form .step3 button {
-                margin-right: 1rem;
-                position: absolute;
-                bottom: -10rem;
-                right: -1rem;
-                width: 40%;
-                height: 2.5rem;
-        }
+    .container .container-image {
+        margin: 0;
+        background-image: url('assets/bg-sidebar-mobile.svg'); 
+        background-size: cover;
+        border-radius: 0;
+        min-height: 25vh;
+        min-width: 100vw;
+    }
 
-        /* ================= .container-form step4 ============================ */
-        
-        
-        
-        
-        .container .container-form .step4 {
-                display: none;
-                position: absolute;
-                top: 1rem;
-                right: 1rem;
-                /* display: flex; */
-                flex-direction: column;
-                margin-bottom: 15px;
-                width: 90%;
-        }
-        
-        .container .container-form .step4 h1 {
-                margin-top: 1rem;
-        }
-        
-        .container .container-form .step4 p {
-                margin-top: -1rem;
-                margin-bottom: .5rem;
-        }
-        
-        .container .container-form .step4 .step4-select {
-                display: flex;
-                flex-direction: column;
-                width: 20rem;
-                height: 11.5rem;
-                
-        }
-        
-        
-        .container .container-form .step4 .step4-select .marked {
-                width: 88%;
-                padding-left: 1rem;
-                padding-right: 3rem;
-                height: 4rem;
-                position: relative;
-        }
-        
-        
-        
-        .container .container-form .step4 .step4-select .marked h2 {
-                position: absolute;
-                top: .3rem;
-                left: 2rem;
-                font-weight: 600;
-                font-size: 1rem;
-        }
-        
-        .container .container-form .step4 .step4-select .line {
-                background-color: rgb(217, 209, 209);
-                height: .1rem;
-                width: 77%;
-                position: absolute;
-                top: 12rem;
-                right: 3.8rem;
-        }
-        
-        .container .container-form .step4 .step4-select .marked p {
-                position: absolute;
-                top: 4rem;
-                left: 2rem;
-                text-decoration: underline;
-                color:rgb(130, 155, 225);
-                cursor: pointer;
-        
-        }
-        
-        .container .container-form .step4 .step4-select .marked span {
-                position: absolute;
-                top: 2.5rem;
-                right: -1.7rem;
-                
-                font-weight: 800;
-        }
-        
-        
-        .container .container-form .step4 .step4-select .markedSecond p {
-                position: relative;
-                top: 2.2rem;
-                margin: 0;
-                line-height: 0.5;
-                left: 2rem;
-        
-        }
-        
-        .container .container-form .step4 .step4-select .markedSecond span {
-                position: relative;
-                left: 24rem;
-                top: 1.5rem;
-                margin: 0;
-                line-height: 0.5;
-        
-        }
-        
-        
-        .container .container-form .step4 .total p {
-                position: absolute;
-                left: 1.7rem;
-                bottom: -2rem;
-        }
-        
-        .container .container-form .step4 .total span {
-                position: absolute;
-                right: 2rem;
-                bottom: -2rem;
-                color: blue;
-                font-size: 1.2rem;
-                font-weight: 700;
-        }
-        
-        .container .container-form .step4 .goBack {
-                position: absolute;
-                bottom: -13.4rem;
-                left: 0;
-        }
-        
-        .container .container-form .step4 button {
-                margin-right: 1rem;
-                position: absolute;
-                bottom: -14rem;
-                right: -1rem;
-                width: 35%;
-        }
-        
-        
-        /* ================= .container-form ThankYou ============================ */
-        
-        .thankYou {
-                display: none;
-                /* display: flex; */
-                flex-direction: column;
-        }
-        
-        .thankYou img {
-                width: 20%;
-                position: absolute;;
-                top: 25%;
-                right: 40%;
-        }
-        
-        .thankYou h1 {
-                width: 70%;
-                position: absolute;
-                top: 40%;
-                right: .7rem;
-        }
-        
-        .thankYou p {
-                width: 90%;
-                position: absolute;
-                top: 53%;
-                right: 1.7rem;
-                text-align: center;
-        }
-        
-        
-        
+    .steps {
+        margin-top: 1.5rem;
+        z-index: 2;
+        padding: 1rem;
+        min-width: 70%;
+        min-height: 20vh;
+        gap: 2rem;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .steps .step {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .circle {
+        width: 5rem;
+        height: 5rem;
+        margin-right: 0;
+    }
+
+    .step-description {
+        gap: .5rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .step-title {
+        font-size: 1rem;
+    }
+
+    .form1 input {
+        height: 3.5rem;
+    }
+
+    .step2-main-items {
+        font-size: 1.3rem;
+    }
+
+    .step2-item {
+        gap: .7rem;
+        min-width: 40%;
+    }
+
+    .step2-item img {
+        width: 5rem;
+        margin-bottom: 1rem;
+
+    }
+
+    .step3-choices {
+        width: 70vw;
+        gap: 2rem;
+        font-size: 1.2rem;
+    }
+
+    .step3-choices .choice {
+        height: 6rem;
+        justify-content: space-evenly;
+    }
+
+    .step4-main {
+        margin-right: 15rem;
+    }
+
+    .main-box {
+        font-size: 1.5rem;
+    }
+
+    .thankYou p {
+        font-size: 1.2rem;
+    }
+
+}
+
+/* Mobile screen (max-width: 768px) */
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 100vw;
+        min-height: 100vh;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .container .container-image {
+        margin: 0;
+        background-image: url('assets/bg-sidebar-mobile.svg'); /* Your mobile image here */
+        background-size: cover;
+        border-radius: 0;
+        min-height: 25vh;
+        min-width: 100vw;
+    }
+
+    .steps {
+        z-index: 2;
+        padding: 1rem;
+        min-width: 70%;
+        min-height: 20vh;
+        gap: 0.5rem;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .step-description {
+        display: none;
+    }
+
+    .container-form {
+        min-width: 100%;
+        padding: 1rem;
+        background: white;
+    }
+
+    .form-step1 {
+        gap: 1rem;
+        padding: 2rem;  
     }
     
+    .step1-main .form1 {
+        gap: 1rem;
+    }
+
+    .form1 button {
+        width: 100%;
+        position: relative;
+        top: -1rem;
+    }
+
+    .error-message {
+        padding-top: 0.5rem;
+    }
+
+    .form-step2 {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .step2-main-items {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        min-height: 20vh;
+        margin-right: 0;
+    }
+
+    .step2-item {
+        min-width: 100%;
+        min-height: 5%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: .5rem;
+    }
+
+    .step2-item img {
+        margin-bottom: 0;
+    }
+
+    .spanToggle {
+        width: 25%;
+    }
+
+    .step3-choices .choice {
+        gap: 2rem;
+    }
+
+    .step3-choices .choice-label {
+        font-size: .8rem;
+        display: flex;
+        gap: .5rem;
+        align-items: center;
+    }
+
+    .form-step4 {
+        min-height: 70vh;
+        justify-content: center;
+        gap: 1.5rem;
+        padding: 1rem;  
+    }
+
+    .step4-main {
+        margin-right: 0;
+    }
+
+    .thankYou {
+        padding: 1rem;  
+    }
+
+    .thankYou img {
+        width: 40%;
+    }
+
+    .thankYou h1 {
+        margin-bottom: 1rem;
+    }
+
+    .thankYou p {
+        width: 90%;
+    }
+}
+
