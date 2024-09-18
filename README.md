@@ -16,5 +16,5 @@ Author
 
 Live server
 
-- https://mohamednaeemm.github.io/Multi-Step-Form/
+- https://mohamednaeemm.github.io/multi-step-form/
 
