@@ -564,11 +564,9 @@ body {
     }
 
     .container-form {
-        min-width: 100%;
+        min-width: 90%;
         padding: 4rem;
         background: white;
-        position: relative;
-        top: -2rem;
     }
 
     .steps {
@@ -579,7 +577,7 @@ body {
         min-height: 20vh;
         gap: 2rem;
         flex-direction: row;
-        align-items: center;
+        align-items: flex-end;
         justify-content: center;
     }
 
@@ -645,6 +643,18 @@ body {
         font-size: 1.5rem;
     }
 
+    .option-choosed {
+        margin-top: 2rem;
+    }
+
+    .main-total {
+        font-size: 1.5rem;
+    }
+
+    .main-total span {
+        font-size: 2rem;
+    }
+
     .thankYou p {
         font-size: 1.2rem;
     }
@@ -706,6 +716,7 @@ body {
 
     .form1 button {
         margin-top: 0;
+        width: 100%;
     }
 
     .error-message {
@@ -743,6 +754,11 @@ body {
         width: 25%;
     }
 
+    .step2-footer button, .step3-footer button, .step4-footer button  {
+        width: 35%;
+    }
+    
+
     .form-step3 {
         gap: 2rem;
     }
@@ -771,6 +787,10 @@ body {
 
     .step4-main {
         margin-right: 0;
+    }
+
+    .main-total {
+        padding: 1rem;
     }
 
     .thankYou {
